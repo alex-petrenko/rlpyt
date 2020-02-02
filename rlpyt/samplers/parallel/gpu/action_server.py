@@ -158,8 +158,8 @@ class AlternatingActionServer:
             for b in obs_ready_pair[alt]:
                 b.acquire()
                 # assert not b.acquire(block=False)  # Debug check.
-            if "bootstrap_value" in self.samples_np.agent:
-                self.bootstrap_value_pair[alt][:] = self.agent.value(*agent_inputs_pair[alt])
+            # if "bootstrap_value" in self.samples_np.agent:
+            #     self.bootstrap_value_pair[alt][:] = self.agent.value(*agent_inputs_pair[alt])
             if np.any(step_h.done):
                 for b_reset in np.where(step_h.done)[0]:
                     step_h.action[b_reset] = 0
